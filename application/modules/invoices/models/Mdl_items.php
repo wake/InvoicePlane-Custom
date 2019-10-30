@@ -66,6 +66,16 @@ class Mdl_Items extends Response_Model
                 'field' => 'item_description',
                 'label' => trans('description'),
             ],
+            'item_hoogte' => [
+                'field' => 'item_hoogte',
+                'label' => trans('hoogte'),
+                'rules' => 'required',
+            ],
+            'item_breedte' => [
+                'field' => 'item_breedte',
+                'label' => trans('breedte'),
+                'rules' => 'required',
+            ],
             'item_quantity' => [
                 'field' => 'item_quantity',
                 'label' => trans('quantity'),

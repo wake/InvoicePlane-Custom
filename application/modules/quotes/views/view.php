@@ -145,6 +145,50 @@ $cv = $this->controller->view_data["custom_values"];
             helper: fixHelper,
             items: 'tbody',
         });
+
+        $(document).ready(function () {
+            $('input[name="item_quantity"]').prop ('readonly', true);
+        });
+
+        $(document).on ('dblclick', '.td-quantity span', function () {
+
+          var $tr = $(this).closest ('tr')
+            , $quantity = $tr.find ('input[name="item_quantity"]')
+            ;
+
+          if ($quantity.data ('auto-cal') !== false) {
+              if (confirm ('Unlock readonly and stop auto calculate ?')) {
+                  $quantity.prop ('readonly', false).data ('auto-cal', false);
+              }
+          }
+
+          else {
+              if (confirm ('Enable readonly and start auto calculate ?')) {
+                  $quantity.prop ('readonly', true).data ('auto-cal', true);
+
+                  var $length = $tr.find ('input[name="item_hoogte"]')
+                    , $height = $tr.find ('input[name="item_breedte"]')
+                    ;
+
+                  $quantity.val ($length.val () * $height.val ());
+              }
+          }
+
+        });
+
+        $(document).on ('keyup', 'input[name="item_hoogte"], input[name="item_breedte"]', function () {
+
+          var $tr = $(this).closest ('tr')
+            , $length = $tr.find ('input[name="item_hoogte"]')
+            , $height = $tr.find ('input[name="item_breedte"]')
+            , $quantity = $tr.find ('input[name="item_quantity"]')
+            ;
+
+          if (($quantity).data ('auto-cal') === false)
+              return;
+
+          $quantity.val ($length.val () * $height.val ());
+        });
     });
 </script>
 

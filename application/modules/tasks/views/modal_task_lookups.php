@@ -50,7 +50,9 @@
                     $('#item_table tbody:last input[name=item_name]').val(items[key].task_name);
                     $('#item_table tbody:last textarea[name=item_description]').val(items[key].task_description);
                     $('#item_table tbody:last input[name=item_price]').val(items[key].task_price);
-                    $('#item_table tbody:last input[name=item_quantity]').val('1');
+                    $('#item_table tbody:last input[name=item_hoogte]').val(items[key].task_hoogte);
+                    $('#item_table tbody:last input[name=item_breedte]').val(items[key].task_breedte);
+                    $('#item_table tbody:last input[name=item_quantity]').val(items[key].task_hoogte * items[key].task_breedte);
                     $('#item_table tbody:last select[name=item_tax_rate_id]').val(items[key].tax_rate_id);
 
                     $('#modal-choose-items').modal('hide');

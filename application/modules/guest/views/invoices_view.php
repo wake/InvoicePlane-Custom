@@ -116,6 +116,14 @@
                             </td>
                             <td><?php _htmlsc($item->item_name); ?></td>
                             <td>
+                                <span class="pull-left"><?php _trans('hoogte'); ?></span>
+                                <span class="pull-right amount"><?php echo $item->item_hoogte; ?></span>
+                            </td>
+                            <td>
+                                <span class="pull-left"><?php _trans('breedte'); ?></span>
+                                <span class="pull-right amount"><?php echo $item->item_breedte; ?></span>
+                            </td>
+                            <td>
                                 <span class="pull-left"><?php _trans('quantity'); ?></span>
                                 <span class="pull-right amount"><?php echo $item->item_quantity; ?></span>
                             </td>

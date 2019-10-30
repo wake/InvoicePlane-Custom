@@ -635,6 +635,8 @@ class Sumex
         $node->setAttribute('tariff_type', 590);
         $node->setAttribute('code', (int)$item->product_sku);
         $node->setAttribute('session', 1);
+        $node->setAttribute('hoogte', $item->item_hoogte);
+        $node->setAttribute('breedte', $item->item_breedte);
         $node->setAttribute('quantity', $item->item_quantity);
         $node->setAttribute('date_begin', date("Y-m-d\TH:i:s", strtotime($item->item_date)));
         $node->setAttribute('provider_id', $this->_company['gln']);

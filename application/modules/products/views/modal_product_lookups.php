@@ -32,7 +32,9 @@
                     last_item_row.find('input[name=item_name]').val(items[key].product_name);
                     last_item_row.find('textarea[name=item_description]').val(items[key].product_description);
                     last_item_row.find('input[name=item_price]').val(items[key].product_price);
-                    last_item_row.find('input[name=item_quantity]').val('1');
+                    last_item_row.find('input[name=item_hoogte]').val(items[key].product_hoogte);
+                    last_item_row.find('input[name=item_breedte]').val(items[key].product_breedte);
+                    last_item_row.find('input[name=item_quantity]').val(items[key].product_hoogte * items[key].product_breedte);
                     last_item_row.find('select[name=item_tax_rate_id]').val(items[key].tax_rate_id);
                     last_item_row.find('input[name=item_product_id]').val(items[key].product_id);
                     last_item_row.find('select[name=item_product_unit_id]').val(items[key].unit_id);

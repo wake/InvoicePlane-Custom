@@ -130,6 +130,8 @@
         <tr>
             <th class="item-name"><?php _trans('item'); ?></th>
             <th class="item-desc"><?php _trans('description'); ?></th>
+            <th class="item-amount text-right"><?php _trans('hoogte'); ?></th>
+            <th class="item-amount text-right"><?php _trans('breedte'); ?></th>
             <th class="item-amount text-right"><?php _trans('qty'); ?></th>
             <th class="item-price text-right"><?php _trans('price'); ?></th>
             <?php if ($show_item_discounts) : ?>
@@ -145,6 +147,8 @@
             <tr>
                 <td><?php _htmlsc($item->item_name); ?></td>
                 <td><?php echo nl2br(htmlsc($item->item_description)); ?></td>
+                <td><?php _htmlsc($item->hoogte); ?></td>
+                <td><?php _htmlsc($item->breedte); ?></td>
                 <td class="text-right">
                     <?php echo format_amount($item->item_quantity); ?>
                     <?php if ($item->item_product_unit) : ?>
