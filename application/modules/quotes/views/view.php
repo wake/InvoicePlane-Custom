@@ -166,8 +166,8 @@ $cv = $this->controller->view_data["custom_values"];
               if (confirm ('Enable readonly and start auto calculate ?')) {
                   $quantity.prop ('readonly', true).data ('auto-cal', true);
 
-                  var $length = $tr.find ('input[name="item_hoogte"]')
-                    , $height = $tr.find ('input[name="item_breedte"]')
+                  var $length = $tr.find ('input[name="item_height"]')
+                    , $height = $tr.find ('input[name="item_width"]')
                     ;
 
                   $quantity.val ($length.val () * $height.val ());
@@ -176,11 +176,11 @@ $cv = $this->controller->view_data["custom_values"];
 
         });
 
-        $(document).on ('keyup', 'input[name="item_hoogte"], input[name="item_breedte"]', function () {
+        $(document).on ('keyup', 'input[name="item_height"], input[name="item_width"]', function () {
 
           var $tr = $(this).closest ('tr')
-            , $length = $tr.find ('input[name="item_hoogte"]')
-            , $height = $tr.find ('input[name="item_breedte"]')
+            , $length = $tr.find ('input[name="item_height"]')
+            , $height = $tr.find ('input[name="item_width"]')
             , $quantity = $tr.find ('input[name="item_quantity"]')
             ;
 

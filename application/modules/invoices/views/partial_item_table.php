@@ -5,8 +5,8 @@
             <th></th>
             <th><?php _trans('item'); ?></th>
             <th><?php _trans('description'); ?></th>
-            <th><?php _trans('hoogte'); ?></th>
-            <th><?php _trans('breedte'); ?></th>
+            <th><?php _trans('height'); ?></th>
+            <th><?php _trans('width'); ?></th>
             <th><?php _trans('quantity'); ?></th>
             <th><?php _trans('price'); ?></th>
             <th><?php _trans('tax_rate'); ?></th>
@@ -39,16 +39,16 @@
                     <input type="text" name="item_name" class="input-sm form-control" value="">
                 </div>
             </td>
-            <td class="td-amount td-hoogte">
+            <td class="td-amount td-height">
                 <div class="input-group">
-                    <span class="input-group-addon"><?php _trans('hoogte'); ?></span>
-                    <input type="text" name="item_hoogte" class="input-sm form-control amount" value="">
+                    <span class="input-group-addon"><?php _trans('height'); ?></span>
+                    <input type="text" name="item_height" class="input-sm form-control amount" value="">
                 </div>
             </td>
-            <td class="td-amount td-breedte">
+            <td class="td-amount td-width">
                 <div class="input-group">
-                    <span class="input-group-addon"><?php _trans('breedte'); ?></span>
-                    <input type="text" name="item_breedte" class="input-sm form-control amount" value="">
+                    <span class="input-group-addon"><?php _trans('width'); ?></span>
+                    <input type="text" name="item_width" class="input-sm form-control amount" value="">
                 </div>
             </td>
             <td class="td-amount td-quantity">
@@ -186,21 +186,21 @@
                             } ?>>
                     </div>
                 </td>
-                <td class="td-amount td-hoogte">
+                <td class="td-amount td-height">
                     <div class="input-group">
-                        <span class="input-group-addon"><?php _trans('hoogte'); ?></span>
-                        <input type="text" name="item_hoogte" class="input-sm form-control amount"
-                               value="<?php echo format_amount($item->item_hoogte); ?>"
+                        <span class="input-group-addon"><?php _trans('height'); ?></span>
+                        <input type="text" name="item_height" class="input-sm form-control amount"
+                               value="<?php echo format_amount($item->item_height); ?>"
                             <?php if ($invoice->is_read_only == 1) {
                                 echo 'disabled="disabled"';
                             } ?>>
                     </div>
                 </td>
-                <td class="td-amount td-breedte">
+                <td class="td-amount td-width">
                     <div class="input-group">
-                        <span class="input-group-addon"><?php _trans('breedte'); ?></span>
-                        <input type="text" name="item_breedte" class="input-sm form-control amount"
-                               value="<?php echo format_amount($item->item_breedte); ?>"
+                        <span class="input-group-addon"><?php _trans('width'); ?></span>
+                        <input type="text" name="item_width" class="input-sm form-control amount"
+                               value="<?php echo format_amount($item->item_width); ?>"
                             <?php if ($invoice->is_read_only == 1) {
                                 echo 'disabled="disabled"';
                             } ?>>

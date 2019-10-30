@@ -33,8 +33,8 @@ class Ajax extends Admin_Controller
 
             foreach ($items as $item) {
                 if ($item->item_name) {
-                    $item->item_hoogte = ($item->item_hoogte ? standardize_amount($item->item_hoogte) : floatval(0));
-                    $item->item_breedte = ($item->item_breedte ? standardize_amount($item->item_breedte) : floatval(0));
+                    $item->item_height = ($item->item_height ? standardize_amount($item->item_height) : floatval(0));
+                    $item->item_width = ($item->item_width ? standardize_amount($item->item_width) : floatval(0));
                     $item->item_quantity = ($item->item_quantity ? standardize_amount($item->item_quantity) : floatval(0));
                     $item->item_price = ($item->item_quantity ? standardize_amount($item->item_price) : floatval(0));
                     $item->item_discount_amount = ($item->item_discount_amount) ? standardize_amount($item->item_discount_amount) : null;
@@ -350,8 +350,8 @@ class Ajax extends Admin_Controller
                     'item_product_id' => $quote_item->item_product_id,
                     'item_name' => $quote_item->item_name,
                     'item_description' => $quote_item->item_description,
-                    'item_hoogte' => $quote_item->item_hoogte,
-                    'item_breedte' => $quote_item->item_breedte,
+                    'item_height' => $quote_item->item_height,
+                    'item_width' => $quote_item->item_width,
                     'item_quantity' => $quote_item->item_quantity,
                     'item_price' => $quote_item->item_price,
                     'item_product_unit_id' => $quote_item->item_product_unit_id,

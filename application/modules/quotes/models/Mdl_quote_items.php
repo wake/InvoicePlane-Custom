@@ -58,13 +58,13 @@ class Mdl_Quote_Items extends Response_Model
                 'field' => 'item_description',
                 'label' => trans('description'),
             ],
-            'item_hoogte' => [
-                'field' => 'item_hoogte',
-                'label' => trans('hoogte'),
+            'item_height' => [
+                'field' => 'item_height',
+                'label' => trans('height'),
             ],
-            'item_breedte' => [
-                'field' => 'item_breedte',
-                'label' => trans('breedte'),
+            'item_width' => [
+                'field' => 'item_width',
+                'label' => trans('width'),
             ],
             'item_quantity' => [
                 'field' => 'item_quantity',

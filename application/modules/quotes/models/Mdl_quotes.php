@@ -208,8 +208,8 @@ class Mdl_Quotes extends Response_Model
                 'item_tax_rate_id' => $quote_item->item_tax_rate_id,
                 'item_name' => $quote_item->item_name,
                 'item_description' => $quote_item->item_description,
-                'item_hoogte' => $quote_item->item_hoogte,
-                'item_breedte' => $quote_item->item_breedte,
+                'item_height' => $quote_item->item_height,
+                'item_width' => $quote_item->item_width,
                 'item_quantity' => $quote_item->item_quantity,
                 'item_price' => $quote_item->item_price,
                 'item_order' => $quote_item->item_order

@@ -104,12 +104,12 @@
                         </td>
                         <td><?php _htmlsc($item->item_name); ?></td>
                         <td>
-                            <span class="pull-left"><?php _trans('hoogte'); ?></span>
-                            <span class="pull-right amount"><?php echo $item->item_hoogte; ?></span>
+                            <span class="pull-left"><?php _trans('height'); ?></span>
+                            <span class="pull-right amount"><?php echo $item->item_height; ?></span>
                         </td>
                         <td>
-                            <span class="pull-left"><?php _trans('breedte'); ?></span>
-                            <span class="pull-right amount"><?php echo $item->item_breedte; ?></span>
+                            <span class="pull-left"><?php _trans('width'); ?></span>
+                            <span class="pull-right amount"><?php echo $item->item_width; ?></span>
                         </td>
                         <td>
                             <span class="pull-left"><?php _trans('quantity'); ?></span>

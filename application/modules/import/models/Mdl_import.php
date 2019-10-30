@@ -49,8 +49,8 @@ class Mdl_Import extends Response_Model
             'item_date_added',
             'item_name',
             'item_description',
-            'item_hoogte',
-            'item_breedte',
+            'item_height',
+            'item_width',
             'item_quantity',
             'item_price'
         ),
