@@ -147,8 +147,8 @@
             <tr>
                 <td><?php _htmlsc($item->item_name); ?></td>
                 <td><?php echo nl2br(htmlsc($item->item_description)); ?></td>
-                <td><?php _htmlsc($item->item_hoogte); ?></td>
-                <td><?php _htmlsc($item->item_breedte); ?></td>
+                <td class="text-right"><?php _htmlsc($item->item_hoogte); ?></td>
+                <td class="text-right"><?php _htmlsc($item->item_breedte); ?></td>
                 <td class="text-right">
                     <?php echo format_amount($item->item_quantity); ?>
                     <?php if ($item->item_product_unit) : ?>
@@ -174,7 +174,7 @@
         <tbody class="invoice-sums">
 
         <tr>
-            <td <?php echo($show_item_discounts ? 'colspan="5"' : 'colspan="4"'); ?> class="text-right">
+            <td <?php echo($show_item_discounts ? 'colspan="7"' : 'colspan="6"'); ?> class="text-right">
                 <?php _trans('subtotal'); ?>
             </td>
             <td class="text-right"><?php echo format_currency($invoice->invoice_item_subtotal); ?></td>
@@ -182,7 +182,7 @@
 
         <?php if ($invoice->invoice_item_tax_total > 0) { ?>
             <tr>
-                <td <?php echo($show_item_discounts ? 'colspan="5"' : 'colspan="4"'); ?> class="text-right">
+                <td <?php echo($show_item_discounts ? 'colspan="7"' : 'colspan="6"'); ?> class="text-right">
                     <?php _trans('item_tax'); ?>
                 </td>
                 <td class="text-right">
@@ -193,7 +193,7 @@
 
         <?php foreach ($invoice_tax_rates as $invoice_tax_rate) : ?>
             <tr>
-                <td <?php echo($show_item_discounts ? 'colspan="5"' : 'colspan="4"'); ?> class="text-right">
+                <td <?php echo($show_item_discounts ? 'colspan="7"' : 'colspan="6"'); ?> class="text-right">
                     <?php echo htmlsc($invoice_tax_rate->invoice_tax_rate_name) . ' (' . format_amount($invoice_tax_rate->invoice_tax_rate_percent) . '%)'; ?>
                 </td>
                 <td class="text-right">
@@ -204,7 +204,7 @@
 
         <?php if ($invoice->invoice_discount_percent != '0.00') : ?>
             <tr>
-                <td <?php echo($show_item_discounts ? 'colspan="5"' : 'colspan="4"'); ?> class="text-right">
+                <td <?php echo($show_item_discounts ? 'colspan="7"' : 'colspan="6"'); ?> class="text-right">
                     <?php _trans('discount'); ?>
                 </td>
                 <td class="text-right">
@@ -214,7 +214,7 @@
         <?php endif; ?>
         <?php if ($invoice->invoice_discount_amount != '0.00') : ?>
             <tr>
-                <td <?php echo($show_item_discounts ? 'colspan="5"' : 'colspan="4"'); ?> class="text-right">
+                <td <?php echo($show_item_discounts ? 'colspan="7"' : 'colspan="6"'); ?> class="text-right">
                     <?php _trans('discount'); ?>
                 </td>
                 <td class="text-right">
@@ -224,7 +224,7 @@
         <?php endif; ?>
 
         <tr>
-            <td <?php echo($show_item_discounts ? 'colspan="5"' : 'colspan="4"'); ?> class="text-right">
+            <td <?php echo($show_item_discounts ? 'colspan="7"' : 'colspan="6"'); ?> class="text-right">
                 <b><?php _trans('total'); ?></b>
             </td>
             <td class="text-right">
@@ -232,7 +232,7 @@
             </td>
         </tr>
         <tr>
-            <td <?php echo($show_item_discounts ? 'colspan="5"' : 'colspan="4"'); ?> class="text-right">
+            <td <?php echo($show_item_discounts ? 'colspan="7"' : 'colspan="6"'); ?> class="text-right">
                 <?php _trans('paid'); ?>
             </td>
             <td class="text-right">
@@ -240,7 +240,7 @@
             </td>
         </tr>
         <tr>
-            <td <?php echo($show_item_discounts ? 'colspan="5"' : 'colspan="4"'); ?> class="text-right">
+            <td <?php echo($show_item_discounts ? 'colspan="7"' : 'colspan="6"'); ?> class="text-right">
                 <b><?php _trans('balance'); ?></b>
             </td>
             <td class="text-right text-red">
