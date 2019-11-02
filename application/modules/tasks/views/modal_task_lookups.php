@@ -52,6 +52,7 @@
                     $('#item_table tbody:last input[name=item_price]').val(items[key].task_price);
                     $('#item_table tbody:last input[name=item_height]').val(items[key].task_height);
                     $('#item_table tbody:last input[name=item_width]').val(items[key].task_width);
+                    $('#item_table tbody:last input[name=item_m2_enable]').val(items[key].task_m2_enable);
                     $('#item_table tbody:last input[name=item_quantity]').val(items[key].task_height * items[key].task_width);
                     $('#item_table tbody:last select[name=item_tax_rate_id]').val(items[key].tax_rate_id);
 

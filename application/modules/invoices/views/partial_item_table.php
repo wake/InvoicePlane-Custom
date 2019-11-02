@@ -33,6 +33,7 @@
                 <input type="hidden" name="item_id" value="">
                 <input type="hidden" name="item_product_id" value="">
                 <input type="hidden" name="item_task_id" class="item-task-id" value="">
+                <input type="hidden" name="item_m2_enable" value="1">
 
                 <div class="input-group">
                     <span class="input-group-addon"><?php _trans('item'); ?></span>
@@ -54,7 +55,7 @@
             <td class="td-amount td-quantity">
                 <div class="input-group">
                     <span class="input-group-addon"><?php _trans('quantity'); ?></span>
-                    <input type="text" name="item_quantity" class="input-sm form-control amount" value="">
+                    <input type="text" name="item_quantity" class="input-sm form-control amount" value="" readonly>
                 </div>
             </td>
             <td class="td-amount">
@@ -176,6 +177,7 @@
                                echo $item->item_task_id;
                            } ?>">
                     <input type="hidden" name="item_product_id" value="<?php echo $item->item_product_id; ?>">
+                    <input type="hidden" name="item_m2_enable" value="<?php echo $item->item_m2_enable; ?>">
 
                     <div class="input-group">
                         <span class="input-group-addon"><?php _trans('item'); ?></span>
@@ -191,7 +193,7 @@
                         <span class="input-group-addon"><?php _trans('height'); ?></span>
                         <input type="text" name="item_height" class="input-sm form-control amount"
                                value="<?php echo format_amount($item->item_height); ?>"
-                            <?php if ($invoice->is_read_only == 1) {
+                            <?php if ($invoice->is_read_only == 1 || $item->item_m2_enable != 1) {
                                 echo 'disabled="disabled"';
                             } ?>>
                     </div>
@@ -201,7 +203,7 @@
                         <span class="input-group-addon"><?php _trans('width'); ?></span>
                         <input type="text" name="item_width" class="input-sm form-control amount"
                                value="<?php echo format_amount($item->item_width); ?>"
-                            <?php if ($invoice->is_read_only == 1) {
+                            <?php if ($invoice->is_read_only == 1 || $item->item_m2_enable != 1) {
                                 echo 'disabled="disabled"';
                             } ?>>
                     </div>
@@ -213,6 +215,9 @@
                                value="<?php echo format_amount($item->item_quantity); ?>"
                             <?php if ($invoice->is_read_only == 1) {
                                 echo 'disabled="disabled"';
+                            } ?>
+                            <?php if ($item->item_m2_enable == 1) {
+                                echo ' readonly';
                             } ?>>
                     </div>
                 </td>

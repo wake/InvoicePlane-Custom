@@ -51,6 +51,7 @@ class Mdl_Import extends Response_Model
             'item_description',
             'item_height',
             'item_width',
+            'item_m2_enable',
             'item_quantity',
             'item_price'
         ),

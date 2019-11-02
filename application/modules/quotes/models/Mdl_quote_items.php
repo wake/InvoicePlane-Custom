@@ -66,6 +66,10 @@ class Mdl_Quote_Items extends Response_Model
                 'field' => 'item_width',
                 'label' => trans('width'),
             ],
+            'item_m2_enable' => [
+                'field' => 'item_m2_enable',
+                'label' => trans('m2_enable'),
+            ],
             'item_quantity' => [
                 'field' => 'item_quantity',
                 'label' => trans('quantity'),

@@ -76,6 +76,11 @@ class Mdl_Items extends Response_Model
                 'label' => trans('width'),
                 'rules' => 'required',
             ],
+            'item_m2_enable' => [
+                'field' => 'item_m2_enable',
+                'label' => trans('m2_enable'),
+                'rules' => 'required',
+            ],
             'item_quantity' => [
                 'field' => 'item_quantity',
                 'label' => trans('quantity'),

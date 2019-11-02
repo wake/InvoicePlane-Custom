@@ -24,6 +24,7 @@
                 <input type="hidden" name="quote_id" value="<?php echo $quote_id; ?>">
                 <input type="hidden" name="item_id" value="">
                 <input type="hidden" name="item_product_id" value="">
+                <input type="hidden" name="item_m2_enable" value="1">
 
                 <div class="input-group">
                     <span class="input-group-addon"><?php _trans('item'); ?></span>
@@ -45,7 +46,7 @@
             <td class="td-amount td-quantity">
                 <div class="input-group">
                     <span class="input-group-addon"><?php _trans('quantity'); ?></span>
-                    <input type="text" name="item_quantity" class="input-sm form-control amount" value="">
+                    <input type="text" name="item_quantity" class="input-sm form-control amount" value="" readonly>
                 </div>
             </td>
             <td class="td-amount">
@@ -129,6 +130,7 @@
                     <input type="hidden" name="quote_id" value="<?php echo $quote_id; ?>">
                     <input type="hidden" name="item_id" value="<?php echo $item->item_id; ?>">
                     <input type="hidden" name="item_product_id" value="<?php echo $item->item_product_id; ?>">
+                    <input type="hidden" name="item_m2_enable" value="<?php echo $item->item_m2_enable; ?>">
 
                     <div class="input-group">
                         <span class="input-group-addon"><?php _trans('item'); ?></span>
@@ -140,21 +142,21 @@
                     <div class="input-group">
                         <span class="input-group-addon"><?php _trans('height'); ?></span>
                         <input type="text" name="item_height" class="input-sm form-control amount"
-                               value="<?php echo format_amount($item->item_height); ?>">
+                               value="<?php echo format_amount($item->item_height); ?>" <?php echo $item->item_m2_enable != 1 ? 'disabled="disabled"' : '' ?>>
                     </div>
                 </td>
                 <td class="td-amount td-width">
                     <div class="input-group">
                         <span class="input-group-addon"><?php _trans('width'); ?></span>
                         <input type="text" name="item_width" class="input-sm form-control amount"
-                               value="<?php echo format_amount($item->item_width); ?>">
+                               value="<?php echo format_amount($item->item_width); ?>" <?php echo $item->item_m2_enable != 1 ? 'disabled="disabled"' : '' ?>>
                     </div>
                 </td>
                 <td class="td-amount td-quantity">
                     <div class="input-group">
                         <span class="input-group-addon"><?php _trans('quantity'); ?></span>
                         <input type="text" name="item_quantity" class="input-sm form-control amount"
-                               value="<?php echo format_amount($item->item_quantity); ?>">
+                               value="<?php echo format_amount($item->item_quantity); ?>" <?php echo $item->item_m2_enable == 1 ? 'readonly' : '' ?>>
                     </div>
                 </td>
                 <td class="td-amount">

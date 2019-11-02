@@ -34,6 +34,7 @@
                     last_item_row.find('input[name=item_price]').val(items[key].product_price);
                     last_item_row.find('input[name=item_height]').val(items[key].product_height);
                     last_item_row.find('input[name=item_width]').val(items[key].product_width);
+                    last_item_row.find('input[name=item_m2_enable]').val(items[key].product_m2_enable);
                     last_item_row.find('input[name=item_quantity]').val(items[key].product_height * items[key].product_width);
                     last_item_row.find('select[name=item_tax_rate_id]').val(items[key].tax_rate_id);
                     last_item_row.find('input[name=item_product_id]').val(items[key].product_id);

@@ -144,8 +144,8 @@
             <tr>
                 <td><?php _htmlsc($item->item_name); ?></td>
                 <td><?php echo nl2br(htmlsc($item->item_description)); ?></td>
-                <td class="text-right"><?php _htmlsc($item->item_height); ?></td>
-                <td class="text-right"><?php _htmlsc($item->item_width); ?></td>
+                <td class="text-right"><?php $item->item_m2_enable == 1 ? _htmlsc($item->item_height) : ''; ?></td>
+                <td class="text-right"><?php $item->item_m2_enable == 1 ? _htmlsc($item->item_width) : ''; ?></td>
                 <td class="text-right">
                     <?php echo format_amount($item->item_quantity); ?>
                     <?php if ($item->item_product_unit) : ?>

@@ -210,6 +210,7 @@ class Mdl_Quotes extends Response_Model
                 'item_description' => $quote_item->item_description,
                 'item_height' => $quote_item->item_height,
                 'item_width' => $quote_item->item_width,
+                'item_m2_enable' => $quote_item->item_m2_enable,
                 'item_quantity' => $quote_item->item_quantity,
                 'item_price' => $quote_item->item_price,
                 'item_order' => $quote_item->item_order

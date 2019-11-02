@@ -147,30 +147,33 @@ $cv = $this->controller->view_data["custom_values"];
         });
 
         $(document).ready(function () {
-            $('input[name="item_quantity"]').prop ('readonly', true);
+            //$('input[name="item_quantity"]').prop ('readonly', true);
         });
 
         $(document).on ('dblclick', '.td-quantity span', function () {
 
           var $tr = $(this).closest ('tr')
             , $quantity = $tr.find ('input[name="item_quantity"]')
+            , $m2Enable = $tr.find ('input[name="item_m2_enable"]')
+            , $height = $tr.find ('input[name="item_height"]')
+            , $width = $tr.find ('input[name="item_width"]')
             ;
 
-          if ($quantity.data ('auto-cal') !== false) {
-              if (confirm ('Unlock readonly and stop auto calculate ?')) {
-                  $quantity.prop ('readonly', false).data ('auto-cal', false);
+          if ($m2Enable.val () == '1') {
+              if (confirm ('Unlock readonly and disable auto calculate ?')) {
+                  $quantity.prop ('readonly', false);
+                  $height.prop ('disabled', 'disabled');
+                  $width.prop ('disabled', 'disabled');
+                  $m2Enable.val ('0');
               }
           }
 
           else {
-              if (confirm ('Enable readonly and start auto calculate ?')) {
-                  $quantity.prop ('readonly', true).data ('auto-cal', true);
-
-                  var $length = $tr.find ('input[name="item_height"]')
-                    , $height = $tr.find ('input[name="item_width"]')
-                    ;
-
-                  $quantity.val ($length.val () * $height.val ());
+              if (confirm ('Enable readonly and auto calculate ?')) {
+                  $quantity.prop ('readonly', true).val ($height.val () * $width.val ());
+                  $height.prop ('disabled', null);
+                  $width.prop ('disabled', null);
+                  $m2Enable.val ('1');
               }
           }
 
@@ -179,15 +182,16 @@ $cv = $this->controller->view_data["custom_values"];
         $(document).on ('keyup', 'input[name="item_height"], input[name="item_width"]', function () {
 
           var $tr = $(this).closest ('tr')
-            , $length = $tr.find ('input[name="item_height"]')
-            , $height = $tr.find ('input[name="item_width"]')
+            , $height = $tr.find ('input[name="item_height"]')
+            , $width = $tr.find ('input[name="item_width"]')
+            , $m2Enable = $tr.find ('input[name="item_m2_enable"]')
             , $quantity = $tr.find ('input[name="item_quantity"]')
             ;
 
-          if (($quantity).data ('auto-cal') === false)
+          if ($m2Enable.val () != '1')
               return;
 
-          $quantity.val ($length.val () * $height.val ());
+          $quantity.val ($height.val () * $width.val ());
         });
     });
 </script>

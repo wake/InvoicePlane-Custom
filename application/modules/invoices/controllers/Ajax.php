@@ -37,6 +37,7 @@ class Ajax extends Admin_Controller
                 if (!empty($item->item_name)) {
                     $item->item_height = ($item->item_height ? standardize_amount($item->item_height) : floatval(0));
                     $item->item_width = ($item->item_width ? standardize_amount($item->item_width) : floatval(0));
+                    $item->item_m2_enable = ($item->item_m2_enable == 1 ? 1 : 0);
                     $item->item_quantity = ($item->item_quantity ? standardize_amount($item->item_quantity) : floatval(0));
                     $item->item_price = ($item->item_quantity ? standardize_amount($item->item_price) : floatval(0));
                     $item->item_discount_amount = ($item->item_discount_amount) ? standardize_amount($item->item_discount_amount) : null;

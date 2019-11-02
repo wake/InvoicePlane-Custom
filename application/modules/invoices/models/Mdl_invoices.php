@@ -246,6 +246,7 @@ class Mdl_Invoices extends Response_Model
                 'item_description' => $invoice_item->item_description,
                 'item_height' => $invoice_item->item_height,
                 'item_width' => $invoice_item->item_width,
+                'item_m2_enable' => $invoice_item->item_m2_enable,
                 'item_quantity' => $invoice_item->item_quantity,
                 'item_price' => $invoice_item->item_price,
                 'item_discount_amount' => $invoice_item->item_discount_amount,

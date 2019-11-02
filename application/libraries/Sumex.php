@@ -637,6 +637,7 @@ class Sumex
         $node->setAttribute('session', 1);
         $node->setAttribute('height', $item->item_height);
         $node->setAttribute('width', $item->item_width);
+        $node->setAttribute('m2_enable', $item->item_m2_enable);
         $node->setAttribute('quantity', $item->item_quantity);
         $node->setAttribute('date_begin', date("Y-m-d\TH:i:s", strtotime($item->item_date)));
         $node->setAttribute('provider_id', $this->_company['gln']);
